@@ -150,9 +150,6 @@ FGameplayAbilitySpecHandle：实例化GA后的处理器，可以用于获取GA�
 
 - FGameplayTagQuery：FGameplayTag查询
 
-
-- FGameTagNode：标签节点，定义了标签名、父节点、子节点
-
 流程：该模块的入口为IGameplayTagsModule接口，通过该接口可以获取到UGameplayTagsManager（单例）类以及FGameplayTag类
 
 ## 3.7 Task（FGameplayTask）
