@@ -16,7 +16,7 @@
 
 打开角色蓝图，添加PhysicalAnimation组件，并设置Bone的值为pelvis，然后按下图操作：
 
-- 选择所有刚体，可以添加一个Physical Animation Profiles，然后选择Assign，可以在Details面板中，看到PhysicalAnimation配置，这里可以为每个刚体单独配置数据。
+- 选择所有刚体，可以添加一个Physical Animation Profiles，然后选择Assign，可以在Details面板中，看到PhysicalAnimation配置，这里可以为每个刚体单独配置数据。 
 
   ![](pictures\PA-1.png)
 
@@ -95,7 +95,7 @@ USkeletalBodySetup继承于UBodySetup，在父类的基础上增加了一个bSki
 
 在UE5中，选择Constraint，可以配置右边的参数，对应的类是FConstraintInstance：
 
-![](pictures\Constraint.jpg)
+![](pictures\Constraint.png)
 
 ## 4.3 刚体状态（Rigid Body States）
 
