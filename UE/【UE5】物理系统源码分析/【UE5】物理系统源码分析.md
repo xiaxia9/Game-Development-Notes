@@ -91,7 +91,7 @@ TickGroup可以分为以下几类：
       - 调用FTickTaskSequencer::ReleaseTickGroup()释放该TickGroup。在该函数中，调用FTickTaskSequencer::DispatchTickGroup()，遍历HiPriTickTasks\[WorldTickGroup][IndexInner]和TickTasks\[WorldTickGroup][IndexInner]，并调用TGraphTask< FTickFunctionTask>::Unlock()，然后重置数组。回到上一级函数，阻塞等待，如果TickCompletionEvents[Block]数量大于0，调用WaitUntilTasksComplete()直到任务完成，然后调用ResetTickGroup()重置数据
       - 如果bBlockTillComplete为True，查询是否有新生成的Tick，如果无，则设置bFinished为true。
     - TickGroup更新。
-  - 上面提到了将**StartPhysicsTickFunction**注册到TG_PrePhysics组，这里介绍一下该TickFunction的流程：入口为FStartPhysicsTickFunction::ExecuteTick()，然后调用UWorld::StartPhysicsSim()，再调用FChaosScene::StartFrame()发起物理模拟
+  - 上面提到了将**StartPhysicsTickFunction**注册到TG_StartPhysics组，这里介绍一下该TickFunction的流程：入口为FStartPhysicsTickFunction::ExecuteTick()，然后调用UWorld::StartPhysicsSim()，再调用FChaosScene::StartFrame()发起物理模拟
     - 调用FPhysScene_Chaos::OnStartFrame()。
       - 调用FPhysicsReplication::Tick()。根据复制目标，更新body的状态。
       - 调用FPhysScene_Chaos::UpdateKinematicsOnDeferredSkelMeshes()。收集需要移动的Actor和Bodies的transform，并批量处理。
